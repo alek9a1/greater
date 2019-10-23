@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import Slider from './Slider';
-export default class Home extends Component {
 
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+
+
+export default class Home extends Component {
     state = {
         error: null,
         isLoaded: false,
@@ -67,7 +70,7 @@ export default class Home extends Component {
                 {items.map(item => (
                     <div className="single-news col-lg-3" key={item.id}>
                     <h3>{item.title.rendered}</h3>
-                    {item.excerpt.rendered}
+                    <div>{ReactHtmlParser(item.excerpt.rendered)}</div>
                     </div>
                 ))}
             </div>

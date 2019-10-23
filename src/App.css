@@ -7,7 +7,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,4 +18,49 @@
 
 .App-link {
   color: #09d3ac;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.mt-100 {
+  margint-top: 100px;
+}
+
+.slider {
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 150px;
+  height: 70vh;
+  flex-direction: column;
+  align-items: center;font-weight: bold;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 50px;
+  padding: 50px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aic {
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  padding: 0 10px;
+}
+nav ul {
+  list-style-type: none;
 }

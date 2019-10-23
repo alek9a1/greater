@@ -24,31 +24,51 @@
   flex-wrap: wrap;
 }
 .container {
-  max-width: 80%;
+  max-width: 1100px;
   margin: 0 auto;
+  width: 70%;
 }
 
 .mt-100 {
-  margint-top: 100px;
+  margin-top: 100px;
+}
+.fonth {
+  font-size: 5rem;
 }
 
+.font3 {
+  font-size: 3rem;
+}
+
+.font2 {
+  font-size: 2rem;
+}
+.text-center {
+  text-align: center
+}
 .slider {
-  background-color: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  font-size: 150px;
-  height: 70vh;
-  flex-direction: column;
-  align-items: center;font-weight: bold;
+    background-color: #eae6ff;
+    background-image: url(/img/grater.png);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 70vh;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right center;
+    color: #4b41a4;
+    line-height: 1;
 }
 
 .footer {
-  background-color: #f2f2f2;
+  background-color: #eae6ff;
   display: flex;
   justify-content: center;
   align-content: center;
-  font-size: 50px;
+  font-size: 1rem;
   padding: 50px 0;
   flex-direction: column;
   align-items: center;
@@ -61,6 +81,15 @@ a {
   text-decoration: none;
   padding: 0 10px;
 }
+nav {
+  margin-left: auto;
+  text-transform: uppercase;
+}
 nav ul {
   list-style-type: none;
+  margin: 0;
+}
+
+.header {
+  padding: 10px 0;
 }

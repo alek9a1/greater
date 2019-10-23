@@ -2,11 +2,12 @@ import React from 'react';
   
 const Footer = () => {
    return (
-       <div>
+    <section className="footer mt-100">
            <div className="container">
-           footer
+           greateR - WP theme
            </div>
-        </div>
+    </section>
+        
    )
 }
 

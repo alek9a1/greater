@@ -46,24 +46,31 @@ export default class Home extends Component {
 
         } else if (!isLoaded) {
             return (
-            <div>
-                <Slider/>
-                 Ładuję</div>
-            )
+                <div>
+                 <Slider/>
+                 
+                 <div className="container">
+                 <div className="mt-100"><h2 className="font2 text-center">Aktualności</h2></div> 
+                 Ładuję
+                 </div>
+                 </div>
+             )
         } else {
             
         }
         return (
-            <div>
+           <div>
             <Slider/>
-            <div className="container">
-            <ul>
+            <div className="container mt-100">
+            <div className="mt-100"><h2 className="font2 text-center">Aktualności</h2></div> 
+            <div className="news row mt-100">
                 {items.map(item => (
-                    <li key={item.id}>
-                    {item.title.rendered}
-                    </li>
+                    <div className="single-news col-lg-3" key={item.id}>
+                    <h3>{item.title.rendered}</h3>
+                    {item.excerpt.rendered}
+                    </div>
                 ))}
-            </ul>
+            </div>
             </div>
             </div>
         )

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Page = () => {
     return (
-        <div>Page template</div>
+        <div className="container">Page template</div>
     )
 }
 

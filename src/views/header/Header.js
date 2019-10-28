@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Page from '../../views/Page';
 import Home from '../../views/Home';
-
+import Blog from '../../views/Blog';
+import logo from '../../img/logo.png';
+import Single from '../../views/Single';
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,7 +20,7 @@ class Header extends Component {
                     <div className="container">
                         <div className="flex aic">
                             <div className="logo">
-                                <img src="img/logo.png" alt="graterR"></img>
+                                <img src={logo} alt="graterR"></img>
                             </div>
                             <nav>
                                 <ul className="flex">
@@ -28,18 +30,25 @@ class Header extends Component {
                                     <li>
                                     <Link to="/about">About</Link>
                                     </li>
+                                    <li>
+                                    <Link to="/blog">Blog</Link>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
                 </section>
                 <Switch>
+                <Route exact path="/">
+                        <Home />
+                    </Route>
                     <Route path="/about">
                         <Page slug="about"/>
                     </Route>
-                    <Route path="/">
-                        <Home />
+                    <Route exact path="/blog">
+                        <Blog/>
                     </Route>
+                    <Route exact path="/blog/:newsId" component={Single} />
                 </Switch>
             </Router>
             </div>

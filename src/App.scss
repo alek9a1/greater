@@ -1,15 +1,29 @@
+$main-color: #4b41a4;
+$padding: 30px;
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,400,900&display=swap&subset=latin-ext');
+
+body {
+  font-family: 'Montserrat', sans-serif!important;
+  line-height: 1.5;
+}
 .App {
   text-align: center;
 
-  h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin: 50px 0;
-  }
   
+
 }
 
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 50px 0;
+}
 
+.main-color{
+  color: $main-color
+} 
 
 .App-logo {
   height: 40vmin;
@@ -37,10 +51,20 @@
   margin: 0 auto;
   width: 70%;
 }
+.bold {
+  font-weight: bold;
+}
+
+
 
 .mt-100 {
   margin-top: 100px;
 }
+.mb-30 {
+  margin-bottom: $padding;
+}
+
+
 .fonth {
   font-size: 5rem;
 }
@@ -68,9 +92,23 @@
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: right 100px center;
-    color: #4b41a4;
+    color: $main-color;
     line-height: 1;
+
+    .great {
+      font-size: 1.3em;
+    background-color: $main-color;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    color: #fff;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 5px;
+    }
 }
+
+
 
 .footer {
   background-color: #eae6ff;
@@ -81,6 +119,19 @@
   padding: 50px 0;
   flex-direction: column;
   align-items: center;
+
+  .great {
+    font-size: 1.3em;
+    background-color: $main-color;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold
+  }
 }
 
 .aic {
@@ -93,12 +144,164 @@ a {
 nav {
   margin-left: auto;
   text-transform: uppercase;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+
+    li {
+      a {
+        color: $main-color;
+        font-weight: bold;
+      }
+    }
+  }
+
 }
-nav ul {
-  list-style-type: none;
-  margin: 0;
+.shadow {
+  box-shadow: 0px 0px 15px #4b41a429;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.single-news {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: $padding;
+  margin-bottom: $padding;
+  h3 {
+    margin: 30px 0 15px;
+  }
+  .sn-image {
+    padding-bottom: 60%;
+    display: block;
+    background-size: cover
+  }
+}
+
+.pAll {
+  padding: $padding;
+}
+.pSmall {
+  padding: 0px $padding;
+}
+.ml-30 {
+  margin-left: $padding
 }
 
 .header {
   padding: 10px 0;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.btn-first {
+  border: 1px solid $main-color;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  background-color: $main-color;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+
+  &:hover {
+    color: $main-color;
+    background-color: #fff;
+  }
+}
+
+.hero {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: $padding
+}
+
+.loading {
+  position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: $main-color;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+  .loadingcontent {
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+.lds-grid {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-grid div {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation: lds-grid 1.2s linear infinite;
+}
+.lds-grid div:nth-child(1) {
+  top: 6px;
+  left: 6px;
+  animation-delay: 0s;
+}
+.lds-grid div:nth-child(2) {
+  top: 6px;
+  left: 26px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(3) {
+  top: 6px;
+  left: 45px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(4) {
+  top: 26px;
+  left: 6px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(5) {
+  top: 26px;
+  left: 26px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(6) {
+  top: 26px;
+  left: 45px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(7) {
+  top: 45px;
+  left: 6px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(8) {
+  top: 45px;
+  left: 26px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(9) {
+  top: 45px;
+  left: 45px;
+  animation-delay: -1.6s;
+}
+@keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }

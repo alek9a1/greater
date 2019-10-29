@@ -6,7 +6,7 @@ const Slider = () => {
         <div>
             <section className="slider fonth">
                <div className="container">
-               greateR<br></br>
+               Great <span className="great">R</span><br></br>
                <span className="font2">WP React theme</span>
                    </div> 
             </section>

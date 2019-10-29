@@ -20,7 +20,7 @@ class Header extends Component {
                     <div className="container">
                         <div className="flex aic">
                             <div className="logo">
-                                <img src={logo} alt="graterR"></img>
+                            <Link to="/"><img src={logo} alt="graterR"></img></Link>
                             </div>
                             <nav>
                                 <ul className="flex">
@@ -28,10 +28,13 @@ class Header extends Component {
                                     <Link to="/">Home</Link>
                                     </li>
                                     <li>
-                                    <Link to="/about">About</Link>
+                                    <Link to="/o-nas">About</Link>
                                     </li>
                                     <li>
                                     <Link to="/blog">Blog</Link>
+                                    </li>
+                                    <li>
+                                    <Link to="/contact">Contact</Link>
                                     </li>
                                 </ul>
                             </nav>
@@ -42,8 +45,11 @@ class Header extends Component {
                 <Route exact path="/">
                         <Home />
                     </Route>
-                    <Route path="/about">
-                        <Page slug="about"/>
+                    <Route path="/o-nas">
+                        <Page slug="o-nas"/>
+                    </Route>
+                    <Route path="/contact">
+                        <Page slug="contact"/>
                     </Route>
                     <Route exact path="/blog">
                         <Blog/>

@@ -1,14 +1,8 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useRouteMatch,
-    useParams
-  } from "react-router-dom";
+import ReactHtmlParser from 'react-html-parser';
+import Loading from './Loading';
+
  
 
 class Single extends Component {
@@ -24,11 +18,9 @@ class Single extends Component {
 
 
     componentDidMount() {
-        console.log('did mount');
-        axios.get('http://localhost/teamster/wp-json/wp/v2/posts?slug='+this.props.match.params.newsId)
+        axios.get('http://localhost/teamster/wp-json/wp/v2/posts?slug='+this.props.match.params.newsId+'&_embed')
         .then((response) => {
-            console.log(response.data[0]);
-
+            console.log(response);
             this.setState({
                 item: response.data[0],
                 loaded: true
@@ -40,26 +32,26 @@ class Single extends Component {
 
         })
         .finally(() =>  {
-            console.log('single fetch');
         });
     }
 
     render() {
         const { item , loaded } = this.state;
-        console.log(item);
         if ( loaded ) {
+            var image = item._embedded["wp:featuredmedia"]["0"].media_details.sizes.full.source_url;
             return(
+                <div>
+                <div className="hero" style={{backgroundImage: 'url('+image+')'}}></div>
                 <div className="container">
-                  <h1>{ReactHtmlParser(item.title.rendered)}</h1>  
-                {ReactHtmlParser(item.content.rendered)}
-             
+                  <h1 className="mb-30">{ReactHtmlParser(item.title.rendered)}</h1>  
+                    {ReactHtmlParser(item.content.rendered)}
+                </div>
+                
                 </div>
             )
         } else {
             return(
-                <div className="container">
-                Loading
-                </div>
+                <Loading/>
             )
         }   
     }

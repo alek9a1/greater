@@ -4,7 +4,7 @@ const Footer = () => {
    return (
     <section className="footer mt-100">
            <div className="container">
-           greateR - WP theme
+           Great <span className="great">R</span> WP React theme
            </div>
     </section>
         

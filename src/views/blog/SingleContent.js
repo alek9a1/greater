@@ -6,9 +6,15 @@ import {
 
 let SingleContent = (props) => {
     var item = props.item;
-    let styles = {
-        backgroundImage: 'url('+item._embedded["wp:featuredmedia"]["0"].media_details.sizes.medium.source_url+')'
-    };
+    let styles = '';
+    if ('source_url' in item) {
+         styles = {
+            backgroundImage: 'url('+item._embedded["wp:featuredmedia"]["0"].media_details.sizes.medium.source_url+')'
+        };
+    } else {
+         styles = {}
+    }
+    
     return (
         <div className="single-news shadow">
             <div className="sn-image" style={styles}></div>

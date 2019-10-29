@@ -5,18 +5,25 @@ import Loading from './Loading';
 import heroImage from '../img/hero.jpg';
 
 class Page extends Component {
+
     constructor(props) {
         super(props);
+
         this.state = {
             item: [],
-            loaded: false
+            loaded: false,
+            page: this.props.slug
         };
+        
     }
+
+
+    
    
     componentDidMount() {
         axios.get('http://localhost/teamster/wp-json/wp/v2/pages?slug='+this.props.slug+'&_embed')
         .then((response) => {
-            console.log(response);
+
             this.setState({
                 item: response.data[0],
                 loaded: true
@@ -32,8 +39,13 @@ class Page extends Component {
     }
 
     render() {
-        const { item , loaded } = this.state;
-        console.log(this.props);
+        
+        const { item , loaded, page } = this.state
+
+        if (page != this.props.slug) {
+            window.location.reload();
+        }
+
         if ( loaded ) {
             if ( 'source_url' in item) {
                 var image = item._embedded["wp:featuredmedia"]["0"].media_details.sizes.full.source_url;

@@ -25,6 +25,7 @@ import {
 
         axios.get('http://localhost/teamster/wp-json/wp/v2/posts?_embed=true')
         .then((response) => {
+            console.log(response);
             this.setState({
                 isLoaded: true,
                 items: response.data

@@ -45,6 +45,7 @@ class Page extends Component {
         if (page != this.props.slug) {
             window.location.reload();
         }
+        
 
         if ( loaded ) {
             if ( 'source_url' in item) {
